@@ -10,53 +10,85 @@
     font-family: 'Times New Roman', Times, serif;
     background: #333;
     color: #fff;
-    margin: 0; /* Reset default margin */
+    margin: 0; /* Remove default body margin */
 }
 
-/* Add a container for the video to maintain responsiveness */
-.video-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+header {
+    text-align: center;
+    padding: 1em;
+    z-index: 1; /* Ensure header appears above video */
 }
 
-.back-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
+img {
+    width: 120px;
+    height: 120px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
 }
 
-/* Adjustments for smaller screens */
+nav {
+    text-align: center;
+    margin: 1em 0;
+    z-index: 1; /* Ensure navigation appears above video */
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    padding: 1em 1em;
+    margin: 0.75em 0;
+    color: black;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 7em;
+}
+
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+footer {
+    text-align: center;
+    margin-top: 0.25rem;
+    z-index: 1; /* Ensure footer appears above video */
+}
+
+footer a img {
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
 @media (max-width: 600px) {
-    .video-container {
-        position: static;
-    }
-
-    .back-video {
-        position: static;
-        width: 100%;
-        height: auto;
-    }
-
     nav a {
         display: block;
         margin: 0.5em 0;
+    }
+    .back-video {
+        width: 100%; /* Make video full width on small screens */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
     </style>
 </head>
 <body>
-    <div class="video-container">
         <video autoplay loop muted plays-inline class="back-video">
             <source src="images/zoro.mp4" type="video/mp4">
         </video>
-    </div>
     
 
     <header>
